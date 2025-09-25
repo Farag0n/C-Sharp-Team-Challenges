@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/faragon/.nuget/packages/": {}
+    "/home/mateo/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
+      "projectUniqueName": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
       "projectName": "SisVetSanMiguel",
-      "projectPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
-      "packagesPath": "/home/faragon/.nuget/packages/",
-      "outputPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/obj/",
+      "projectPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
+      "packagesPath": "/home/mateo/.nuget/packages/",
+      "outputPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/faragon/.nuget/NuGet/NuGet.Config"
+        "/home/mateo/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
