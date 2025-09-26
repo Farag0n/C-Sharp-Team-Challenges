@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj": {}
+    "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj": {}
   },
   "projects": {
-    "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj": {
+    "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
+        "projectUniqueName": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
         "projectName": "SisVetSanMiguel",
-        "projectPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
-        "packagesPath": "/home/faragon/.nuget/packages/",
-        "outputPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/obj/",
+        "projectPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
+        "packagesPath": "/home/mateo/.nuget/packages/",
+        "outputPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/faragon/.nuget/NuGet/NuGet.Config"
+          "/home/mateo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,6 +37,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
