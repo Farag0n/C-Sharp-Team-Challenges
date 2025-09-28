@@ -21,7 +21,7 @@ namespace SisVetSanMiguel.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("SisVetSanMiguel.Models.Atention", b =>
+            modelBuilder.Entity("SisVetSanMiguel.Domain.Models.Atention", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace SisVetSanMiguel.Migrations
                     b.ToTable("atentions");
                 });
 
-            modelBuilder.Entity("SisVetSanMiguel.Models.Client", b =>
+            modelBuilder.Entity("SisVetSanMiguel.Domain.Models.Client", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -79,7 +79,7 @@ namespace SisVetSanMiguel.Migrations
                     b.ToTable("clients");
                 });
 
-            modelBuilder.Entity("SisVetSanMiguel.Models.Pet", b =>
+            modelBuilder.Entity("SisVetSanMiguel.Domain.Models.Pet", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +104,7 @@ namespace SisVetSanMiguel.Migrations
                     b.ToTable("pets");
                 });
 
-            modelBuilder.Entity("SisVetSanMiguel.Models.Vet", b =>
+            modelBuilder.Entity("SisVetSanMiguel.Domain.Models.Vet", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
