@@ -9,9 +9,8 @@ public class Atention
     public string Date { get; set; }
     public string MedicalReport { get; set; }
 
-    public Atention(int id, int vetId, int clientId, int petId, string date, string medicalReport)
+    public Atention(int vetId, int clientId, int petId, string date, string medicalReport)
     {
-        Id = id;
         VetId = vetId;
         ClientId = clientId;
         PetId = petId;
