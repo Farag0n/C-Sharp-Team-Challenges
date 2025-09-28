@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SisVetSanMiguel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e7650e06309693362d7a5a4b52efaf8cabb1676")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5221db49b3b64cfd69a914f2cf50e68c415ee5b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SisVetSanMiguel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SisVetSanMiguel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
