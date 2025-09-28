@@ -2,12 +2,22 @@ namespace SisVetSanMiguel.Services;
 
 //Se "importa" el codigo que se va a usar
 using SisVetSanMiguel.Domain.Interfaces;
-using SisVetSanMiguel.Models;
+using SisVetSanMiguel.Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-public class PetService : IGeneralCrud
+public class PetService : IGeneralCrud<Pet>
 {
+
+    //Esto hace ......
+    private readonly AppDbContext _context;
+    
+    //Este constructor es para .....
+    public PetService(AppDbContext context)
+    {
+        _context = context;
+    }
+    
     //Metodo del menu
     //--------------------------------------------------------------------------------------------------
     public static void PetMenu()
@@ -15,7 +25,7 @@ public class PetService : IGeneralCrud
         //variable para poder salir de este sub menu
         bool state = true;
         
-        while (!state)
+        while (state)
         {
             VisualMenu();
 
