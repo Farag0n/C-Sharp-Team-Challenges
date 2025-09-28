@@ -1,6 +1,6 @@
 ﻿
 using SisVetSanMiguel;
-using SisVetSanMiguel.Models;
+using SisVetSanMiguel.Domain.Models;
 using SisVetSanMiguel.Services;
 
 namespace MyNamespace;
@@ -18,5 +18,8 @@ public class Program
         clientServices.Delete(3);
 
         clientServices.GetAll();
+
+        var petService = new PetService(context);
+        petService.PetMenu();
     }
 }

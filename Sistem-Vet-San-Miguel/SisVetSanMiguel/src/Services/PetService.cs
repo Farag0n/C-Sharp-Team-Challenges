@@ -106,7 +106,7 @@ public class PetService : IGeneralCrud<Pet>
                 case "6": state = false;
                     break;
                 default: Console.WriteLine("La opcion no es valida, intente de nuevo");
-                    
+                    break;
             }
         }
     }
