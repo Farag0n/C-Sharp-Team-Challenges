@@ -41,7 +41,20 @@ public class PetService : IGeneralCrud
     }
     //--------------------------------------------------------------------------------------------------
     
-
+    //Metodo de bienvenida de menu
+    //--------------------------------------------------------------------------------------------------
+    private static void VisualMenu()
+    {
+        //Mensage de bienvenida
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("==== Bienvenido a el menu de mascota ===");
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("=== Digite la opcion que desea ===");
+        Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Editar mascota\n- 4 Eliminar mascota\n- 5 Volver al menu principal");
+    }
+    //--------------------------------------------------------------------------------------------------
+    
+    
     
     
 }
