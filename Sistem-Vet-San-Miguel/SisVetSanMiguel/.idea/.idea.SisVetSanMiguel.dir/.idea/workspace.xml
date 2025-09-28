@@ -8,31 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4ddaca-3f53-436d-98e2-7e6c49dbb320" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Services/AtentionServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/SisVetSanMiguel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/SisVetSanMiguel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/SisVetSanMiguel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/SisVetSanMiguel.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/SisVetSanMiguel.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/SisVetSanMiguel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/SisVetSanMiguel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/SisVetSanMiguel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/SisVetSanMiguel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Models/Atention.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Models/Atention.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ClientServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClientServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Interfaces/IGeneralCrud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Interfaces/IGeneralCrud.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DpaMonitoringSettings">
-    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -48,14 +29,15 @@
     &quot;assignee&quot;: &quot;Farag0n&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Farag0n/C-Sharp-Team-Challenges.git",
-    "accountId": "95d46fde-ab80-4df0-a0b1-bfec13d92f0e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Farag0n/C-Sharp-Team-Challenges.git&quot;,
+    &quot;accountId&quot;: &quot;80ad9dd3-9f6e-41b9-92c8-70de31e38f9f&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Services/AtentionServices.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/src/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/src/Services/PetService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -66,23 +48,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.SisVetSanMiguel.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/home/faragon/Desktop/Repos/C-Sharp_challenges/Semana-02-RiwiMusic",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/gestion-mascotas&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/faragon/Desktop/Repos/C-Sharp_challenges/Semana-02-RiwiMusic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SisVetSanMiguel" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -117,7 +97,6 @@
       <updated>1759021508572</updated>
       <workItem from="1759021510391" duration="835000" />
       <workItem from="1759031013097" duration="7615000" />
-      <workItem from="1759093477760" duration="2210000" />
     </task>
     <task id="LOCAL-00001" summary="feat: pet menu metod">
       <option name="closed" value="true" />
