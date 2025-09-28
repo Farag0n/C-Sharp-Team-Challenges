@@ -1,4 +1,4 @@
-namespace SisVetSanMiguel.Models;
+namespace SisVetSanMiguel.Domain.Models;
 
 public class Vet : Person
 {

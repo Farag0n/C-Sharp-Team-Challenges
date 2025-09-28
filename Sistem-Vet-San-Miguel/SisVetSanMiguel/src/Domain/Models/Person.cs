@@ -1,4 +1,4 @@
-namespace SisVetSanMiguel.Models;
+namespace SisVetSanMiguel.Domain.Models;
 public abstract class Person
 {
     public int Id { get; set; }
