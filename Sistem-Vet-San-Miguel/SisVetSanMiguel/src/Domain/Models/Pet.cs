@@ -7,6 +7,7 @@ public class Pet
     public string Species { get; set; }
     public string Race { get; set; }
 
+    public Pet() {}
     public Pet(int id, string name, string species, string race)
     {
         Id = id;

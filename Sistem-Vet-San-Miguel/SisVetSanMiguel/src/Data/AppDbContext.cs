@@ -15,9 +15,9 @@ public class AppDbContext : DbContext
         if (!options.IsConfigured)
         {
             options.UseMySql(
-                connectionString: "server=localhost; user=root;database=riw_ef; password=20010928",
+                connectionString: "server=localhost; user=root;database=riw_test1; password=20010928",
                 
-                MySqlServerVersion.AutoDetect("server=localhost; user=root;database=riw_ef; password=20010928")
+                MySqlServerVersion.AutoDetect("server=localhost; user=root;database=riw_test1; password=20010928")
                 
             );
         }
