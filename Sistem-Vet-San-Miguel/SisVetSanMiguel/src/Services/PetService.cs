@@ -1,16 +1,17 @@
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 namespace SisVetSanMiguel.Services;
 
 //Se "importa" el codigo que se va a usar
 using SisVetSanMiguel.Domain.Interfaces;
 using SisVetSanMiguel.Domain.Models;
-using System.Collections.Generic;
-using System.Linq;
+
 
 public class PetService : IGeneralCrud<Pet>
 {
 
     //Esto hace ......
-    private readonly AppDbContext _context;
+    public readonly AppDbContext _context;
     
     //Este constructor es para .....
     public PetService(AppDbContext context)
@@ -34,15 +35,17 @@ public class PetService : IGeneralCrud<Pet>
 
             switch (option)
             {
-                case "1": RegisterPet();
+                case "1": Add();
                     break;
-                case "2": ListPets();
+                case "2": GetAll();
                     break;
-                case "3": EditPet();
+                case "3": GetById();
                     break;
-                case "4": DeletePet();
+                case "4": Update();
                     break;
-                case "5": state = false;
+                case "5": Delete();
+                    break;
+                case "6": state = false;
                     break;
                 default: Console.WriteLine("La opcion no es valida, intente de nuevo");
                     
@@ -60,39 +63,84 @@ public class PetService : IGeneralCrud<Pet>
         Console.WriteLine("==== Bienvenido a el menu de mascota ===");
         Console.WriteLine("----------------------------------------");
         Console.WriteLine("=== Digite la opcion que desea ===");
-        Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Editar mascota\n- 4 Eliminar mascota\n- 5 Volver al menu principal");
+        Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Buscar mascota por ID\n- 4 Editar mascota\n- Eliminar mascota por ID\n- 6 Volver al menu principal");
     }
     //--------------------------------------------------------------------------------------------------
     
     //Metodo de registro de mascota
     //--------------------------------------------------------------------------------------------------
-    private static void RegisterPet()
+    public void Add(Pet entity)
     {
-        
+        _context.pets.Add(entity);
+        _context.SaveChanges();
     } 
     //--------------------------------------------------------------------------------------------------
     
     //Metodo de mostrar lista de mascotas
     //--------------------------------------------------------------------------------------------------
-    private static void ListPets()
+    public void GetAll()
     {
+        var pets = _context.pets.ToList();
         
+        foreach (var pet in pets)
+        {
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine($"Nombre: {pet.Name}\nEspecie: {pet.Specie}\nRaza: {pet.Race}\nId Dueño: {pet.IdPetOwner}");
+            Console.WriteLine("------------------------------------");
+        }
+    }
+    //--------------------------------------------------------------------------------------------------
+    
+    //Metodo para buscar mascota por ID
+    //--------------------------------------------------------------------------------------------------
+    public void GetById(int id)
+    {
+        var pet = _context.pets.Find(id);
+        
+        if (pet != null)
+        {
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine($"Nombre: {pet.Name}\nEspecie: {pet.Specie}\nRaza: {pet.Race}\nDueño: {pet.IdPetOwner}");
+            Console.WriteLine("-----------------------------------------");
+        }
+        else
+        {
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("La mascota no fue encontrada");
+            Console.WriteLine("----------------------------");
+        }
     }
     //--------------------------------------------------------------------------------------------------
     
     //Metodo para editar mascota
     //--------------------------------------------------------------------------------------------------
-    private static void EditPet()
+    public void Update(Pet entity, int id)
     {
+        var existingPet = _context.pets.Find(id);
         
+        if (existingPet != null)
+        {
+            existingPet.Name = entity.Name;
+            existingPet.Specie = entity.Specie;
+            existingPet.Race = entity.Race;
+            existingPet.IdPetOwner = entity.IdPetOwner;
+
+            _context.SaveChanges();
+        }
     }
     //--------------------------------------------------------------------------------------------------
     
     //Metodo para eliminar mascota
     //--------------------------------------------------------------------------------------------------
-    private static void DeletePet()
+    public void void Delete(int id)
     {
-        
+        var pet = _context.pets.Find(id);
+
+        if (pet != null)
+        {
+            _context.pets.Remove(pet);
+            _context.SaveChanges();
+        }
     }
     //--------------------------------------------------------------------------------------------------
 }
