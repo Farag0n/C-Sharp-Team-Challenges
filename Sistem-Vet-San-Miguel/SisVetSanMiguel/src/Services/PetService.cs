@@ -74,9 +74,9 @@ public class PetService : IGeneralCrud<Pet>
     
     //Metodo de mostrar lista de mascotas
     //--------------------------------------------------------------------------------------------------
-    private static void ListPets()
+    public IEnumerable<Pet> GetAll()
     {
-        
+        return _context.pets.ToList();
     }
     //--------------------------------------------------------------------------------------------------
     
