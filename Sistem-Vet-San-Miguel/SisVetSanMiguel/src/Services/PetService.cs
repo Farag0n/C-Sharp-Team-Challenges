@@ -2,9 +2,11 @@ namespace SisVetSanMiguel.Services;
 
 //Se "importa" el codigo que se va a usar
 using SisVetSanMiguel.Domain.Interfaces;
+using SisVetSanMiguel.Models;
 using System.Collections.Generic;
 using System.Linq;
 
+public class PetService : IGeneralCrud
 {
     //Metodo del menu
     //--------------------------------------------------------------------------------------------------
@@ -13,6 +15,7 @@ using System.Linq;
         //variable para poder salir de este sub menu
         bool state = true;
         
+        while (!state)
         {
             VisualMenu();
 
@@ -37,5 +40,21 @@ using System.Linq;
         }
     }
     //--------------------------------------------------------------------------------------------------
+    
+    //Metodo de bienvenida de menu
+    //--------------------------------------------------------------------------------------------------
+    private static void VisualMenu()
+    {
+        //Mensage de bienvenida
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("==== Bienvenido a el menu de mascota ===");
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("=== Digite la opcion que desea ===");
+        Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Editar mascota\n- 4 Eliminar mascota\n- 5 Volver al menu principal");
+    }
+    //--------------------------------------------------------------------------------------------------
+    
+    
+    
     
 }
