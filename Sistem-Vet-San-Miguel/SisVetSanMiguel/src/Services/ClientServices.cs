@@ -1,5 +1,5 @@
 using SisVetSanMiguel.Domain.Interfaces;
-using SisVetSanMiguel.Models;
+using SisVetSanMiguel.Domain.Models;
 
 namespace SisVetSanMiguel.Services;
 
