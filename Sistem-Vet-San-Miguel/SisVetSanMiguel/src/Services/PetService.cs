@@ -19,7 +19,7 @@ public class PetService : IGeneralCrud<Pet>
     
     //Metodo del menu
     //--------------------------------------------------------------------------------------------------
-    public static void PetMenu()
+    public void PetMenu()
     {
         //variable para poder salir de este sub menu
         bool state = true;
@@ -33,15 +33,75 @@ public class PetService : IGeneralCrud<Pet>
 
             switch (option)
             {
-                case "1": Add();
+                case "1": 
+                    Console.WriteLine("----------------------------------------");
+                    Console.WriteLine("Ingrese el nombre de la mascota: ");
+                    string name = Console.ReadLine();
+                    
+                    Console.WriteLine("Ingrese la especie: ");
+                    string specie = Console.ReadLine();
+                    
+                    Console.WriteLine("Ingrese la raza: ");
+                    string race = Console.ReadLine();
+                    
+                    Console.WriteLine("Ingrese el ID del dueño: ");
+                    int ownerId = int.Parse(Console.ReadLine());
+
+                    var newPet = new Pet
+                    {
+                        Name = name,
+                        Specie = specie,
+                        Race = race,
+                        IdPetOwner = ownerId
+                    };
+                    
+                    Add(newPet);
+                    Console.WriteLine("----------------------------------------");
                     break;
                 case "2": GetAll();
                     break;
-                case "3": GetById();
+                case "3":
+                    Console.WriteLine("----------------------------------------------");
+                    Console.WriteLine("Ingrese el ID de la mascota que desea buscar: ");
+                    int searchPet = int.Parse(Console.ReadLine());
+                    
+                    GetById(searchPet);
                     break;
-                case "4": Update();
+                case "4": 
+                    Console.WriteLine("----------------------------------------------");
+                    Console.Write("Ingrese el ID de la mascota que desea actualizar: ");
+                    int updateId = int.Parse(Console.ReadLine());
+
+                    Console.Write("Ingrese nuevo nombre: ");
+                    string newName = Console.ReadLine();
+
+                    Console.Write("Ingrese nueva especie: ");
+                    string newSpecie = Console.ReadLine();
+
+                    Console.Write("Ingrese nueva raza: ");
+                    string newRace = Console.ReadLine();
+
+                    Console.Write("Ingrese nuevo ID del dueño: ");
+                    int newOwnerId = int.Parse(Console.ReadLine());
+
+                    var updatedPet = new Pet
+                    {
+                        Name = newName,
+                        Specie = newSpecie,
+                        Race = newRace,
+                        IdPetOwner = newOwnerId
+                    };
+
+                    Update(updatedPet, updateId);
+                    Console.WriteLine("----------------------------------------------");
                     break;
-                case "5": Delete();
+                case "5":
+                    Console.WriteLine("----------------------------------------------");
+                    Console.WriteLine("Ingrese el ID de la mascota que desea eliminar");
+                    int deletePet = int.Parse(Console.ReadLine());
+                    
+                    Delete(deletePet);
+                    Console.WriteLine("----------------------------------------------");
                     break;
                 case "6": state = false;
                     break;
@@ -54,14 +114,14 @@ public class PetService : IGeneralCrud<Pet>
     
     //Metodo de bienvenida de menu
     //--------------------------------------------------------------------------------------------------
-    private static void VisualMenu()
+    public void VisualMenu()
     {
         //Mensage de bienvenida
         Console.WriteLine("----------------------------------------");
         Console.WriteLine("==== Bienvenido a el menu de mascota ===");
         Console.WriteLine("----------------------------------------");
         Console.WriteLine("=== Digite la opcion que desea ===");
-        Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Buscar mascota por ID\n- 4 Editar mascota\n- Eliminar mascota por ID\n- 6 Volver al menu principal");
+        Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Buscar mascota por ID\n- 4 Editar mascota\n- 5 Eliminar mascota por ID\n- 6 Volver al menu principal");
     }
     //--------------------------------------------------------------------------------------------------
     
@@ -130,7 +190,7 @@ public class PetService : IGeneralCrud<Pet>
     
     //Metodo para eliminar mascota
     //--------------------------------------------------------------------------------------------------
-    public void void Delete(int id)
+    public void Delete(int id)
     {
         var pet = _context.pets.Find(id);
 
