@@ -1,4 +1,4 @@
-uusing SisVetSanMiguel.Domain.Models;
+using SisVetSanMiguel.Domain.Models;
 
 namespace SisVetSanMiguel.Services;
 

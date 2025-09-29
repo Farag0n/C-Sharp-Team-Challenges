@@ -1,4 +1,6 @@
-
+{
+  "version": 2,
+  "dgSpecHash": "iTXdOHBG/MM=",
   "success": true,
   "projectFilePath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
   "expectedPackageFiles": [
@@ -47,5 +49,15 @@
     "/home/faragon/.nuget/packages/system.text.json/9.0.9/system.text.json.9.0.9.nupkg.sha512",
     "/home/faragon/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file /home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/obj/project.nuget.cache : The JSON value could not be converted to NuGet.ProjectModel.CacheFile. Path: $ | LineNumber: 1 | BytePositionInLine: 11.",
+      "projectPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/SisVetSanMiguel.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

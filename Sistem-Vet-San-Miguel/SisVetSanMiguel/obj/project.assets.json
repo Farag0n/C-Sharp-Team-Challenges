@@ -3003,5 +3003,13 @@
         "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Sistem-Vet-San-Miguel/SisVetSanMiguel/obj/project.nuget.cache : The JSON value could not be converted to NuGet.ProjectModel.CacheFile. Path: $ | LineNumber: 1 | BytePositionInLine: 11."
+    }
+  ]
 }

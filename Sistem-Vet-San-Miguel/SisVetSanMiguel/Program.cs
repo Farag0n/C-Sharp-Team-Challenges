@@ -1,5 +1,4 @@
-﻿
-using SisVetSanMiguel;
+﻿using SisVetSanMiguel;
 using SisVetSanMiguel.Domain.Models;
 using SisVetSanMiguel.Services;
 
@@ -9,19 +8,16 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        //instanciar el contexto de la base de datos
+        // Instanciar el contexto de la base de datos
         var context = new AppDbContext();
-        
+
         // Instanciar los servicios
         var petService = new PetService(context);
         var vetService = new VetService(context);
         var clientService = new ClientServices(context);
         var atentionService = new AtentionServices(context);
         var querieService = new QuerieService(context);
-        
-        var client1 = new Client("Miguel", "232344456", "miguel@email.com", 1);
-        var client2 = new Client("David", "3456455463", "awooo@email.com", 2);
-        
+
         bool running = true;
 
         while (running)
@@ -44,19 +40,19 @@ public class Program
             switch (option)
             {
                 case "1":
-                    PetService.PetMenu();
+                    petService.PetMenu();
                     break;
                 case "2":
-                    VetService.VetMenu(vetService);
+                    vetService.Menu();
                     break;
                 case "3":
-                    ClientService.ClientMenu(clientService);
+                    clientService.ClientMenu();
                     break;
                 case "4":
-                    AtentionServices.AtentionMenu(atentionService);
+                    atentionService.AtentionMenu();
                     break;
                 case "5":
-                    QuerieService.QuerieMenu(querieService);
+                    querieService.AdvancedQueriesMenu();
                     break;
                 case "0":
                     running = false;
