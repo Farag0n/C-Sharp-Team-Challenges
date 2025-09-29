@@ -87,6 +87,9 @@ namespace SisVetSanMiguel.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("IdPetOwner")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -95,7 +98,7 @@ namespace SisVetSanMiguel.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Species")
+                    b.Property<string>("Specie")
                         .IsRequired()
                         .HasColumnType("longtext");
 

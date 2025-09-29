@@ -17,9 +17,12 @@ public class Program
         clientServices.Update(client2, 2);
         clientServices.Delete(3);
 
-        clientServices.GetAll();
+        //clientServices.GetAll();
 
         var petService = new PetService(context);
-        petService.PetMenu();
+        //petService.PetMenu();
+
+        var queries = new QuerieService(context);
+        queries.GetClientWithMostPets();
     }
 }
