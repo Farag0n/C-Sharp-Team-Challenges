@@ -8,6 +8,8 @@ public class Atention
     public int PetId { get; set; }
     public string Date { get; set; }
     public string MedicalReport { get; set; }
+    
+    public Atention() {}
 
     public Atention(int vetId, int clientId, int petId, string date, string medicalReport)
     {

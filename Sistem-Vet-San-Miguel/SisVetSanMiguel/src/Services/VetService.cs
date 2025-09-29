@@ -3,10 +3,9 @@ namespace SisVetSanMiguel.Services;
 using SisVetSanMiguel.Domain.Interfaces;
 using SisVetSanMiguel.Domain.Models;
 
-
 public class VetService : IGeneralCrud<Vet>
 {
-    private readonly AppDbContext _context;
+    public readonly AppDbContext _context;
 
     public VetService(AppDbContext context)
     {
@@ -29,9 +28,31 @@ public class VetService : IGeneralCrud<Vet>
     }
     //--------------------------------------------------------------------------------------------------
 
-    //Metodo para buscar veterinario por ID (ahora devuelve Vet?)
+    //Metodo para buscar veterinario por ID (implementa la interfaz con void)
     //--------------------------------------------------------------------------------------------------
-    public Vet? GetById(int id)
+    public void GetById(int id)
+    {
+        // Usamos el método auxiliar que sí devuelve Vet? por si quieres reutilizarlo
+        var vet = FindVetById(id);
+
+        if (vet != null)
+        {
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine($"Nombre: {vet.Name}\nDocument: {vet.Document}\nEmail: {vet.Email}\nAtenciones: {vet.Atentions}");
+            Console.WriteLine("------------------------------------");
+        }
+        else
+        {
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("La persona no fue encontrada");
+            Console.WriteLine("----------------------------");
+        }
+    }
+    //--------------------------------------------------------------------------------------------------
+
+    //Metodo auxiliar que devuelve Vet? para uso interno
+    //--------------------------------------------------------------------------------------------------
+    private Vet? FindVetById(int id)
     {
         return _context.vets.Find(id);
     }
@@ -46,11 +67,11 @@ public class VetService : IGeneralCrud<Vet>
     }
     //--------------------------------------------------------------------------------------------------
 
-    //Metodo para actualizar/editar veterinario (simplificado, solo recibe entity)
+    //Metodo para actualizar/editar veterinario (firma ajustada a la interfaz)
     //--------------------------------------------------------------------------------------------------
-    public void Update(Vet entity)
+    public void Update(Vet entity, int id)
     {
-        var existingVet = _context.vets.Find(entity.Id);
+        var existingVet = _context.vets.Find(id);
 
         if (existingVet != null)
         {
@@ -63,7 +84,6 @@ public class VetService : IGeneralCrud<Vet>
         }
     }
     //--------------------------------------------------------------------------------------------------
-
 
     //Metodo para eliminar veterinario
     //--------------------------------------------------------------------------------------------------
@@ -111,8 +131,6 @@ public class VetService : IGeneralCrud<Vet>
     }
     //--------------------------------------------------------------------------------------------------
 
-
-
     //Metodo para pedir los datos en terminal del la busqueda por id
     //--------------------------------------------------------------------------------------------------
     public void BuscarVetPorID()
@@ -121,7 +139,8 @@ public class VetService : IGeneralCrud<Vet>
         Console.Write("Ingrese el ID el veterinario que desea buscar: ");
         int searchVet = int.Parse(Console.ReadLine());
 
-        var vet = GetById(searchVet);
+        // Usamos el nuevo método privado para obtener el Vet
+        var vet = FindVetById(searchVet);
         if (vet != null)
         {
             Console.WriteLine("------------------------------------");
@@ -145,7 +164,7 @@ public class VetService : IGeneralCrud<Vet>
         Console.Write("Ingrese el ID de la persona que desea actualizar: ");
         int IdEditar = int.Parse(Console.ReadLine());
 
-        Vet? vetEditar = GetById(IdEditar);
+        Vet? vetEditar = FindVetById(IdEditar);
         if (vetEditar != null)
         {
             Console.Write("Ingrese el nuevo nombre: ");
@@ -160,7 +179,8 @@ public class VetService : IGeneralCrud<Vet>
             Console.Write("Ingresa las atenciones nuevas: ");
             vetEditar.Atentions = int.Parse(Console.ReadLine());
 
-            Update(vetEditar);
+            // Llamamos a la firma correcta (con id)
+            Update(vetEditar, IdEditar);
 
             Console.WriteLine("✅ Veterinario actualizado.");
         }
@@ -180,7 +200,7 @@ public class VetService : IGeneralCrud<Vet>
             return;
         }
 
-        var vet = GetById(IdEliminar);
+        var vet = FindVetById(IdEliminar);
         if (vet != null)
         {
             Delete(IdEliminar);
@@ -197,7 +217,6 @@ public class VetService : IGeneralCrud<Vet>
     {
         GetAll();
     }
-
 
     public void Menu()
     {
@@ -245,7 +264,5 @@ public class VetService : IGeneralCrud<Vet>
                     break;
             }
         }
-
-
     }
 }

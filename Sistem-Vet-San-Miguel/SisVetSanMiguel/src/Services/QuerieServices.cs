@@ -1,4 +1,4 @@
-using SisVetSanMiguel.Domain.Models;
+uusing SisVetSanMiguel.Domain.Models;
 
 namespace SisVetSanMiguel.Services;
 
@@ -122,7 +122,7 @@ public class QuerieService
             Console.WriteLine("----------------------------------------------");
         }
     }
-    
+
     // Mostrar historial médico de mascota
     public void GetMedicalHistoryByPet(int petId)
     {
@@ -148,7 +148,6 @@ public class QuerieService
         }
     }
 
-
     // Método de bienvenida del menú
     //--------------------------------------------------------------------------------------------------
     public void VisualMenu()
@@ -161,7 +160,8 @@ public class QuerieService
         Console.WriteLine("- 2 Consultar el veterinario con más atenciones realizadas");
         Console.WriteLine("- 3 Consultar la especie de mascota más atendida");
         Console.WriteLine("- 4 Consultar el cliente con más mascotas registradas");
-        Console.WriteLine("- 5 Volver al menú principal");
+        Console.WriteLine("- 5 Consultar historial médico de una mascota");
+        Console.WriteLine("- 6 Volver al menú principal");
         Console.WriteLine("----------------------------------------------");
     }
     //--------------------------------------------------------------------------------------------------
@@ -196,6 +196,11 @@ public class QuerieService
                     GetClientWithMostPets();
                     break;
                 case "5":
+                    Console.Write("Ingrese el ID de la mascota: ");
+                    int petId = int.Parse(Console.ReadLine());
+                    GetMedicalHistoryByPet(petId);
+                    break;
+                case "6":
                     state = false;
                     break;
                 default:
@@ -208,4 +213,3 @@ public class QuerieService
     }
     //--------------------------------------------------------------------------------------------------
 }
-
