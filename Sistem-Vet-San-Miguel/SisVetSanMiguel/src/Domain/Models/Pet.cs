@@ -9,9 +9,8 @@ public class Pet
     public int IdPetOwner { get; set; }
 
     public Pet() {}
-    public Pet(int id, string name, string specie, string race,  int idPetOwner)
+    public Pet(string name, string specie, string race,  int idPetOwner)
     {
-        Id = id;
         Name = name;
         Specie = specie;
         Race = race;
