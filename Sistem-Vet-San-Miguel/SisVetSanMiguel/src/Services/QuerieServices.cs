@@ -20,15 +20,19 @@ public class QuerieService
 
         if (pets.Any())
         {
-            Console.WriteLine($"Mascotas del cliente con id {clientId}:");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine($"Mascotas del cliente con ID {clientId}:");
             foreach (var pet in pets)
             {
                 Console.WriteLine($"- {pet.Name} ({pet.Specie}, {pet.Race})");
             }
+            Console.WriteLine("----------------------------------------------");
         }
         else
         {
+            Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Este cliente no tiene mascotas registradas.");
+            Console.WriteLine("----------------------------------------------");
         }
     }
 
@@ -48,11 +52,15 @@ public class QuerieService
         if (vet != null)
         {
             var vetInfo = _context.vets.Find(vet.VetId);
-            Console.WriteLine($"Veterinario con mas atenciones: {vetInfo.Name} ({vet.TotalAtentions} atenciones)");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine($"Veterinario con más atenciones: {vetInfo.Name} ({vet.TotalAtentions} atenciones)");
+            Console.WriteLine("----------------------------------------------");
         }
         else
         {
+            Console.WriteLine("----------------------------------------------");
             Console.WriteLine("No se encontraron atenciones registradas.");
+            Console.WriteLine("----------------------------------------------");
         }
     }
 
@@ -75,11 +83,15 @@ public class QuerieService
 
         if (specie != null)
         {
-            Console.WriteLine($"La especie mas atendida es: {specie.Especie} ({specie.Total} atenciones)");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine($"La especie más atendida es: {specie.Especie} ({specie.Total} atenciones)");
+            Console.WriteLine("----------------------------------------------");
         }
         else
         {
+            Console.WriteLine("----------------------------------------------");
             Console.WriteLine("No hay registros de atenciones.");
+            Console.WriteLine("----------------------------------------------");
         }
     }
 
@@ -99,32 +111,77 @@ public class QuerieService
         if (client != null)
         {
             var clientInfo = _context.clients.Find(client.ClientId);
-            Console.WriteLine($"Cliente con mas mascotas: {clientInfo.Name} ({client.TotalPets} mascotas registradas)");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine($"Cliente con más mascotas: {clientInfo.Name} ({client.TotalPets} mascotas registradas)");
+            Console.WriteLine("----------------------------------------------");
         }
         else
         {
+            Console.WriteLine("----------------------------------------------");
             Console.WriteLine("No se encontraron clientes con mascotas.");
+            Console.WriteLine("----------------------------------------------");
+        }
+    }
+    
+    // Mostrar historial médico de mascota
+    public void GetMedicalHistoryByPet(int petId)
+    {
+        var history = _context.atentions
+            .Where(a => a.PetId == petId)
+            .OrderByDescending(a => a.Date) // ordena de la más reciente a la más antigua
+            .ToList();
+
+        if (history.Any())
+        {
+            Console.WriteLine($"Historial médico de la mascota con ID {petId}:");
+            foreach (var atention in history)
+            {
+                Console.WriteLine("-------------------------------------------");
+                Console.WriteLine($"Fecha: {atention.Date}");
+                Console.WriteLine($"Veterinario ID: {atention.VetId}");
+                Console.WriteLine($"Reporte médico: {atention.MedicalReport}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("No se encontraron atenciones para esta mascota.");
         }
     }
 
-    // Menu de consultas
+
+    // Método de bienvenida del menú
+    //--------------------------------------------------------------------------------------------------
+    public void VisualMenu()
+    {
+        Console.WriteLine("----------------------------------------------");
+        Console.WriteLine("==== Bienvenido al sub menú de consultas avanzadas ====");
+        Console.WriteLine("----------------------------------------------");
+        Console.WriteLine("=== Digite la opción que desea ===");
+        Console.WriteLine("- 1 Consultar todas las mascotas de un cliente");
+        Console.WriteLine("- 2 Consultar el veterinario con más atenciones realizadas");
+        Console.WriteLine("- 3 Consultar la especie de mascota más atendida");
+        Console.WriteLine("- 4 Consultar el cliente con más mascotas registradas");
+        Console.WriteLine("- 5 Volver al menú principal");
+        Console.WriteLine("----------------------------------------------");
+    }
+    //--------------------------------------------------------------------------------------------------
+
+    // Menú principal de consultas
+    //--------------------------------------------------------------------------------------------------
     public void AdvancedQueriesMenu()
     {
         bool state = true;
+
         while (state)
         {
-            Console.WriteLine("\n==== Consultas Avanzadas ====");
-            Console.WriteLine("1. Consultar todas las mascotas de un cliente");
-            Console.WriteLine("2. Consultar el veterinario con mas atenciones realizadas");
-            Console.WriteLine("3. Consultar la especie de mascota mas atendida");
-            Console.WriteLine("4. Consultar el cliente con mas mascotas registradas");
-            Console.WriteLine("5. Salir");
+            VisualMenu();
 
             string option = Console.ReadLine();
 
             switch (option)
             {
                 case "1":
+                    Console.WriteLine("----------------------------------------------");
                     Console.Write("Ingrese el ID del cliente: ");
                     int clientId = int.Parse(Console.ReadLine());
                     GetPetsByClientId(clientId);
@@ -142,9 +199,13 @@ public class QuerieService
                     state = false;
                     break;
                 default:
-                    Console.WriteLine("Esta opcion no es valida");
+                    Console.WriteLine("----------------------------------------------");
+                    Console.WriteLine("La opción no es válida, intente de nuevo.");
+                    Console.WriteLine("----------------------------------------------");
                     break;
             }
         }
     }
+    //--------------------------------------------------------------------------------------------------
 }
+
