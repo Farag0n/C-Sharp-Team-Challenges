@@ -122,6 +122,7 @@ public class PetService : IGeneralCrud<Pet>
         Console.WriteLine("--------------------------------------------");
         Console.WriteLine("=== Digite la opcion que desea ===");
         Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Buscar mascota por ID\n- 4 Editar mascota\n- 5 Eliminar mascota por ID\n- 6 Volver al menu principal");
+        Console.WriteLine("--------------------------------------------");
     }
     //--------------------------------------------------------------------------------------------------
     
