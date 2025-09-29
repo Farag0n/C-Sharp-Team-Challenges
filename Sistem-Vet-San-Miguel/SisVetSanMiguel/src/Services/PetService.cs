@@ -117,11 +117,12 @@ public class PetService : IGeneralCrud<Pet>
     public void VisualMenu()
     {
         //Mensage de bienvenida
-        Console.WriteLine("----------------------------------------");
-        Console.WriteLine("==== Bienvenido a el menu de mascota ===");
-        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("--------------------------------------------");
+        Console.WriteLine("==== Bienvenido a el sub menu de mascota ===");
+        Console.WriteLine("--------------------------------------------");
         Console.WriteLine("=== Digite la opcion que desea ===");
         Console.WriteLine("- 1 Registrar mascota\n- 2 Ver mascotas registradas\n- 3 Buscar mascota por ID\n- 4 Editar mascota\n- 5 Eliminar mascota por ID\n- 6 Volver al menu principal");
+        Console.WriteLine("--------------------------------------------");
     }
     //--------------------------------------------------------------------------------------------------
     
