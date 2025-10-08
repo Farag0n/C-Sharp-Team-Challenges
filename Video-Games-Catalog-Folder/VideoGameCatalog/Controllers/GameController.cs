@@ -25,33 +25,6 @@ public class GameController : Controller
         return View(games);
     }
     
-    //Testear
-    //---------------------------------------------------------------------------------------
-    [HttpPost]
-    public async Task<IActionResult> Test()
-    {
-        try
-        {
-            string image = "https://uploads1.wikiart.org/images/the-legend-of-zelda-tears-of-the-kingdom-cover.jpg";
-            
-            var game = new Game("Zelda", null, 30000, image);
-            _context.Games.Add(game);
-
-            return RedirectToAction("Index");
-        }
-        catch (HttpRequestException e)
-        {
-            Console.WriteLine(e.InnerException.Message);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-        return RedirectToAction("Index");
-    }
-    
-    
 
     // Añadir juego
     //---------------------------------------------------------------------------------------
