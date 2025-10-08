@@ -97,7 +97,7 @@ public class GameController : Controller
         if (game == null)
             return NotFound();
 
-        return View(game);
+        return View(await game);
     }
     
     //Editar juego
