@@ -24,7 +24,7 @@
         <div class="card">
             <img class="card-img-top" src="@g.Image" alt="@g.Name" />
             <div class="card-body">
-                <a class="btn btn-sm btn-warning" href="@Url.Action("ShowMore","Game", new { id = g.ID })">View more</a>
+                <a class="btn btn-sm btn-warning" href="@Url.Action("ViewMore","Game", new { id = g.ID })">View more</a>
                 <form asp-action="Delete" class="btn btn-danger">
                     <button asp-action="Delete" asp-route-id="@g.ID"></button>
                 </form>
