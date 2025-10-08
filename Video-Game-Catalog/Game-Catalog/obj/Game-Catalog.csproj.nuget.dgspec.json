@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj": {}
+    "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj": {}
   },
   "projects": {
-    "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj": {
+    "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
+        "projectUniqueName": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
         "projectName": "Game-Catalog",
-        "projectPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
-        "packagesPath": "/home/faragon/.nuget/packages/",
-        "outputPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/obj/",
+        "projectPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
+        "packagesPath": "/home/mateo/.nuget/packages/",
+        "outputPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/faragon/.nuget/NuGet/NuGet.Config"
+          "/home/mateo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

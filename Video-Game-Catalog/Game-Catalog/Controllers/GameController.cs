@@ -36,9 +36,12 @@ public class GameController : Controller
             var result = await client.GetStringAsync(apiUrl);
 
             JsonDocument doc = JsonDocument.Parse(result);
-            var name = doc.RootElement.GetProperty("name");
-            var genres = doc.RootElement.GetProperty("genres");
-            var image = doc.RootElement.GetProperty("background_image");
+            var name = doc.RootElement.GetProperty("name").GetString();
+            var genres = doc.RootElement.GetProperty("genres").GetString();
+            var image = doc.RootElement.GetProperty("background_image").GetString();
+
+            var game = new Game(name, genres, 0, image);
+            _context.Games.Add(game);
 
             return RedirectToAction("Index");
         }
