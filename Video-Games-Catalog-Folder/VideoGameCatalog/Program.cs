@@ -1,7 +1,25 @@
+using VideoGameCatalog.Infraestructure;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//--------------------------------------------------------
+
+//Esto es como instanciar la variable de entorno para poder usarla en el programa
+var apiKey = builder.Configuration.GetConnectionString("ApiKey");
+
+//Cadena de conexion de MySql
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+//Contexto-Configuracion del EF con la DB
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+);
+
+//--------------------------------------------------------
 
 var app = builder.Build();
 
@@ -22,6 +40,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Game}/{action=Index}/{id?}");
 
 app.Run();
