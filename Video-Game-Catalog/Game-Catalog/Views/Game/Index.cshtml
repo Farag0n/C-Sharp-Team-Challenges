@@ -1,0 +1,35 @@
+@model IEnumerable<Game_Catalog.Models.Game>
+
+<h1>Video Games Catalog</h1>
+
+<div class="card card-body ">
+    <form asp-controller="Game" asp-action="AddGames" method="post">
+        <label for="nameGame">Buscar</label>
+        <input name="nameGame" id="nameGame" type="text" class="form-control">
+        <button class="btn btn-primary" type="submit">Add Games</button>
+    </form>
+
+</div>
+
+
+
+<div class="card-grid">
+    @foreach (var g in Model)
+    {
+        <div class="card">
+            <img class="card-img-top" src="@g.Image" alt="@g.Name" />
+            <div class="card-body">
+                <a class="btn btn-sm btn-warning" href="@Url.Action("ShowMore","Game", new { id = g.ID })">View more</a>
+            </div>
+        </div>
+    }
+
+</div>
+
+<style>
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+</style>
