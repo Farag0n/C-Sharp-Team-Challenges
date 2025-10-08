@@ -9,6 +9,7 @@ public class Game
     
     public string Image { get; set; }
     
+    
     //Construtor vacio para evitar problemas de instanciacion con EF
     public Game (){}
 

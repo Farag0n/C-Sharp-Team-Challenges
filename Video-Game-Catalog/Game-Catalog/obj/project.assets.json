@@ -2934,19 +2934,19 @@
     ]
   },
   "packageFolders": {
-    "/home/mateo/.nuget/packages/": {}
+    "/home/faragon/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
+      "projectUniqueName": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
       "projectName": "Game-Catalog",
-      "projectPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
-      "packagesPath": "/home/mateo/.nuget/packages/",
-      "outputPath": "/home/mateo/Documents/Riwi/Avanzada/C#/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/obj/",
+      "projectPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/Game-Catalog.csproj",
+      "packagesPath": "/home/faragon/.nuget/packages/",
+      "outputPath": "/home/faragon/Desktop/Repos/C-Sharp-Team-Challenges/Video-Game-Catalog/Game-Catalog/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/mateo/.nuget/NuGet/NuGet.Config"
+        "/home/faragon/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3010,7 +3010,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
