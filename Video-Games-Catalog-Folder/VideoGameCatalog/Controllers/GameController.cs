@@ -105,7 +105,7 @@ public class GameController : Controller
         var game = await _context.Games.FirstOrDefaultAsync(g => g.ID == id);
         if (game == null)
             return NotFound();
-
+        await _context.SaveChangesAsync();
         return View(game);
     }
     //Sobre escritura para hacer el post pero no estoy seguro si esto es polimorfismo
@@ -115,13 +115,13 @@ public class GameController : Controller
         if (!ModelState.IsValid)
             return View(game);
 
-        var existingGame = await _context.Games.FirstOrDefaultAsync(g => g.ID == game.ID);
-        if (existingGame == null)
+        var Game = await _context.Games.FirstOrDefaultAsync(g => g.ID == game.ID);
+        if (Game == null)
             return NotFound();
 
-        existingGame.Name = game.Name;
-        existingGame.Gender = game.Gender;
-        existingGame.Price = game.Price;
+        Game.Name = game.Name;
+        Game.Gender = game.Gender;
+        Game.Price = game.Price;
 
         await _context.SaveChangesAsync();
 
