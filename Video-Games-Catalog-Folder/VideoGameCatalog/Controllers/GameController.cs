@@ -36,7 +36,6 @@ public class GameController : Controller
 
         try
         {
-            //porque estos using y no un var
             using HttpClient client = new HttpClient();
             var result = await client.GetStringAsync(apiUrl);
             using JsonDocument doc = JsonDocument.Parse(result);
@@ -45,7 +44,6 @@ public class GameController : Controller
             var results = doc.RootElement.GetProperty("results");
             if (results.GetArrayLength() == 0)
             {
-                //como retornar este error
                 Console.WriteLine("No se encontraron resultados para el juego buscado.");
                 return RedirectToAction("Index");
             }
