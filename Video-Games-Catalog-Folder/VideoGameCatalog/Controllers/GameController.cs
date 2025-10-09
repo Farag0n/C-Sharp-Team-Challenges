@@ -24,9 +24,9 @@ public class GameController : Controller
         var games = _context.Games.ToList();
         return View(games);
     }
-    
 
-    //Agregar juegos version 2
+
+    //Agregar juegos version
     //---------------------------------------------------------------------------------------
     [HttpPost]
     public async Task<IActionResult> AddGames(string nameGame)
@@ -52,7 +52,7 @@ public class GameController : Controller
 
             //esto para que es
             var firstGame = results[0];
-            
+
             var name = firstGame.GetProperty("name").GetString();
             var image = firstGame.GetProperty("background_image").GetString();
 
@@ -82,7 +82,7 @@ public class GameController : Controller
         return RedirectToAction("Index");
     }
 
-    
+
     // Ver más
     //---------------------------------------------------------------------------------------
     [HttpGet]
@@ -95,7 +95,7 @@ public class GameController : Controller
         return View(game);
     }
 
-    
+
     //Editar juego
     //---------------------------------------------------------------------------------------
     //mostrar la vista de editar
@@ -108,25 +108,25 @@ public class GameController : Controller
         await _context.SaveChangesAsync();
         return View(game);
     }
+
     //Sobre escritura para hacer el post pero no estoy seguro si esto es polimorfismo
     [HttpPost]
-    public async Task<IActionResult> Edit(Game game)
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, Game game)
     {
-        if (!ModelState.IsValid)
-            return View(game);
-
-        var Game = await _context.Games.FirstOrDefaultAsync(g => g.ID == game.ID);
-        if (Game == null)
+        var existingGame = await _context.Games.FindAsync(id);
+        if (existingGame == null)
             return NotFound();
 
-        Game.Name = game.Name;
-        Game.Gender = game.Gender;
-        Game.Price = game.Price;
+        // Actualiza solo los campos que quieres permitir
+        existingGame.Name = game.Name;
+        existingGame.Gender = game.Gender;
+        existingGame.Price = game.Price;
 
         await _context.SaveChangesAsync();
-
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
+
     
     //Eliminar juego
     //---------------------------------------------------------------------------------------

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 namespace VideoGameCatalog.Models;
 
 public class Game
@@ -7,6 +9,7 @@ public class Game
     public string? Gender { get; set; }
     public double Price { get; set; }
     
+    [ValidateNever]
     public string Image { get; set; }
     
     
