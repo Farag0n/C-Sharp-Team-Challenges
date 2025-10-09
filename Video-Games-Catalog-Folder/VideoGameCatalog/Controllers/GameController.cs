@@ -36,6 +36,7 @@ public class GameController : Controller
 
         try
         {
+            //porque estos using y no un var
             using HttpClient client = new HttpClient();
             var result = await client.GetStringAsync(apiUrl);
             using JsonDocument doc = JsonDocument.Parse(result);
@@ -44,11 +45,14 @@ public class GameController : Controller
             var results = doc.RootElement.GetProperty("results");
             if (results.GetArrayLength() == 0)
             {
+                //como retornar este error
                 Console.WriteLine("No se encontraron resultados para el juego buscado.");
                 return RedirectToAction("Index");
             }
 
+            //esto para que es
             var firstGame = results[0];
+            
             var name = firstGame.GetProperty("name").GetString();
             var image = firstGame.GetProperty("background_image").GetString();
 
@@ -59,6 +63,7 @@ public class GameController : Controller
                 genres = string.Join(", ", genresArray.EnumerateArray().Select(g => g.GetProperty("name").GetString()));
             }
 
+            //guardar en el objeto
             var game = new Game(name, genres, 0, image);
             _context.Games.Add(game);
             await _context.SaveChangesAsync(); // ¡no olvide guardar!
@@ -72,7 +77,6 @@ public class GameController : Controller
         catch (Exception e)
         {
             Console.WriteLine($"Error inesperado: {e.Message}");
-            throw;
         }
 
         return RedirectToAction("Index");
@@ -98,11 +102,30 @@ public class GameController : Controller
     [HttpGet]
     public async Task<IActionResult> Edit(int id)
     {
-        var game = await _context.Games.FindOrDefaulAsync(g => g.ID == id);
+        var game = await _context.Games.FirstOrDefaultAsync(g => g.ID == id);
         if (game == null)
             return NotFound();
 
         return View(game);
+    }
+    //Sobre escritura para hacer el post pero no estoy seguro si esto es polimorfismo
+    [HttpPost]
+    public async Task<IActionResult> Edit(Game game)
+    {
+        if (!ModelState.IsValid)
+            return View(game);
+
+        var existingGame = await _context.Games.FirstOrDefaultAsync(g => g.ID == game.ID);
+        if (existingGame == null)
+            return NotFound();
+
+        existingGame.Name = game.Name;
+        existingGame.Gender = game.Gender;
+        existingGame.Price = game.Price;
+
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction("Index");
     }
     
     //Eliminar juego

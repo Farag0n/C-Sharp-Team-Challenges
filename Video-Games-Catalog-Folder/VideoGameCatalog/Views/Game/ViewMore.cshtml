@@ -16,7 +16,7 @@
             <form asp-controller="Game" asp-action="Delete" asp-route-id="@Model.ID" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar este juego?');">
                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                 <a asp-controller="Game" asp-action="Index" class="btn btn-secondary btn-sm">Volver</a>
-                <a asp-controller="Game" asp-action="Edit" class="btn btn-warning btn-sm">Editar</a>
+                <a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.ID"class="btn btn-warning btn-sm">Editar</a>
             </form>
             
         </div>
