@@ -94,19 +94,15 @@ public class GameController : Controller
     
     //Editar juego
     //---------------------------------------------------------------------------------------
-    [HttpPost]
-    public async Task<IActionResult> Edit(Game game)
+    //mostrar la vista de editar
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
     {
-        var existingGame = await _context.Games.FirstOrDefaultAsync(g => g.ID == game.ID);
-        if (existingGame == null)
+        var game = await _context.Games.FindOrDefaulAsync(g => g.ID == id);
+        if (game == null)
             return NotFound();
 
-        
-        existingGame.Price = game.Price;
-        existingGame.Gender = game.Gender;
-
-        await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return View(game);
     }
     
     //Eliminar juego
