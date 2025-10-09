@@ -79,53 +79,18 @@ public class GameController : Controller
     }
 
     
-    
-    // Añadir juego
+    // Ver más
     //---------------------------------------------------------------------------------------
-    // [HttpPost]
-    // public async Task<IActionResult> AddGames(string nameGame)
-    // {
-    //     string apiKey = _config["ApiKey"]!;
-    //     string apiUrl = $"https://api.rawg.io/api/games?search={nameGame}&key={apiKey}";
-    //     try
-    //     {
-    //         HttpClient client = new HttpClient();
-    //         var result = await client.GetStringAsync(apiUrl);
-    //
-    //         JsonDocument doc = JsonDocument.Parse(result);
-    //         var name = doc.RootElement.GetProperty("name").GetString();
-    //         var genres = doc.RootElement.GetProperty("genres").GetString();
-    //         var image = doc.RootElement.GetProperty("background_image").GetString();
-    //
-    //         var game = new Game(name, null, 0, image);
-    //         _context.Games.Add(game);
-    //
-    //         return RedirectToAction("Index");
-    //     }
-    //     catch (HttpRequestException e)
-    //     {
-    //         Console.WriteLine(e.InnerException.Message);
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         Console.WriteLine(e);
-    //         throw;
-    //     }
-    //     return RedirectToAction("Index");
-    // }
-    
-    //Ver mas
-    //---------------------------------------------------------------------------------------
-    [HttpPost]
+    [HttpGet]
     public async Task<IActionResult> ViewMore(int id)
     {
-        var game = _context.Games.FirstOrDefaultAsync(g => g.ID == id);
-
+        var game = await _context.Games.FirstOrDefaultAsync(g => g.ID == id);
         if (game == null)
             return NotFound();
 
-        return View(await game);
+        return View(game);
     }
+
     
     //Editar juego
     //---------------------------------------------------------------------------------------

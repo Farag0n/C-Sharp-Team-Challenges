@@ -1,3 +1,24 @@
 @model VideoGameCatalog.Models.Game
 
-<h1>mas info</h1>
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Imagen -->
+        <div class="col-md-5 text-center">
+            <img src="@Model.Image" alt="@Model.Name" class="img-fluid" style="max-height: 400px;" />
+        </div>
+        
+        <div class="col-md-7">
+            <h2 class="fw-bold">@Model.Name</h2>
+            <p><strong>Género:</strong> @Model.Gender</p>
+            <p><strong>Precio:</strong> $@Model.Price</p>
+
+            
+            <form asp-controller="Game" asp-action="Delete" asp-route-id="@Model.ID" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar este juego?');">
+                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                <a asp-controller="Game" asp-action="Index" class="btn btn-secondary btn-sm">Volver</a>
+                <a asp-controller="Game" asp-action="Edit" class="btn btn-warning btn-sm">Editar</a>
+            </form>
+            
+        </div>
+    </div>
+</div>
