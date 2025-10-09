@@ -54,7 +54,7 @@ public class GameController : Controller
             var name = firstGame.GetProperty("name").GetString();
             var image = firstGame.GetProperty("background_image").GetString();
 
-            // Si el juego tiene géneros, los concatenamos
+            // Si el juego tiene géneros, se extraen y se concatenan( solucion de stackoverflow)
             string genres = "";
             if (firstGame.TryGetProperty("genres", out var genresArray))
             {
